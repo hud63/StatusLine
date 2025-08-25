@@ -1,0 +1,45 @@
+﻿<!doctype html><meta charset='utf-8'><title>ccusage help</title><pre style='white-space:pre-wrap;font:13px Consolas, Courier New, monospace'>USAGE:
+  ccusage [daily] &lt;OPTIONS&gt;
+  ccusage &lt;COMMANDS&gt;
+
+COMMANDS:
+  daily               Show usage report grouped by date  
+  monthly             Show usage report grouped by month  
+  weekly              Show usage report grouped by week  
+  session             Show usage report grouped by conversation session  
+  blocks              Show usage report grouped by session billing blocks  
+  mcp                 Start MCP server with usage reporting tools  
+  statusline          Display compact status line for Claude Code hooks with hybrid time+file caching (Beta)  
+
+For more info, run any command with the `--help` flag:
+  ccusage daily --help
+  ccusage monthly --help
+  ccusage weekly --help
+  ccusage session --help
+  ccusage blocks --help
+  ccusage mcp --help
+  ccusage statusline --help
+
+OPTIONS:
+  -s, --since &lt;since&gt;                      Filter from date (YYYYMMDD format)
+  -u, --until &lt;until&gt;                      Filter until date (YYYYMMDD format)
+  -j, --json                               Output in JSON format (default: false)
+  -m, --mode [mode]                        Cost calculation mode: auto (use costUSD if exists, otherwise calculate), calculate (always calculate), display (always use costUSD) (default: auto, choices: auto | calculate | display)
+  -d, --debug                              Show pricing mismatch information for debugging (default: false)
+  --debug-samples [debug-samples]          Number of sample discrepancies to show in debug output (default: 5) (default: 5)
+  -o, --order [order]                      Sort order: desc (newest first) or asc (oldest first) (default: asc, choices: desc | asc)
+  -b, --breakdown                          Show per-model cost breakdown (default: false)
+  -O, --offline                            Use cached pricing data for Claude models instead of fetching from API (default: false)
+  --no-offline                             Negatable of -O, --offline
+  --color                                  Enable colored output (default: auto). FORCE_COLOR=1 has the same effect.
+  --no-color                               Disable colored output (default: auto). NO_COLOR=1 has the same effect.
+  -z, --timezone &lt;timezone&gt;                Timezone for date grouping (e.g., UTC, America/New_York, Asia/Tokyo). Default: system timezone
+  -l, --locale [locale]                    Locale for date/time formatting (e.g., en-US, ja-JP, de-DE) (default: en-CA)
+  -q, --jq &lt;jq&gt;                            Process JSON output with jq command (requires jq binary, implies --json)
+  --compact                                Force compact mode for narrow displays (better for screenshots) (default: false)
+  -i, --instances                          Show usage breakdown by project/instance (default: false)
+  -p, --project &lt;project&gt;                  Filter to specific project name
+  -h, --help                               Display this help message
+  -v, --version                            Display this version
+
+</pre>
